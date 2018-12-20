@@ -6,12 +6,23 @@ import Form from './components/Form.js'
 import Weather from './components/Weather.js'
 const Api_Key = '5f44a3c33e11771fa7b43cee2023732c'
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      city:'Moscow',
+      country:'Russia'
+    }
+  }
   getWeather = async(e) => {
     e.preventDefault();
-    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=${Api_Key}`);
-  
+    let c = e.target.elements.city.value;
+    let co = e.target.elements.country.value;
+    this.setState({
+      city: c,
+      country: co
+    })
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${c},${co}&APPID=${Api_Key}`);
     const response = await api_call.json();
-  
     console.log(response);
   }
   render() {
