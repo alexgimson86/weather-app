@@ -18,6 +18,7 @@ class App extends Component {
       humidity: null,//response.main.humidity,
       error:null,
       description: null,//response.weather[0].description,
+      icon: null
     }
   }
   getWeather = async(e) => {
@@ -36,6 +37,7 @@ class App extends Component {
           humidity: response.list[0].main.humidity,
           error: "",
           description: response.list[0].weather[0].description,
+          icon: response.list[0].weather[0].icon
         })
   }
   render() {
@@ -47,7 +49,9 @@ class App extends Component {
                  country={this.state.country}
                  temperature={this.state.temperature}
                  humidity={this.state.humidity}
-                 description={this.state.description} />
+                 description={this.state.description} 
+                 icon={this.state.icon}
+                 />
 
       </div>
     );

@@ -1,10 +1,12 @@
 import React from 'react';
 const Weather = (props) =>{
 
+  const iconLink = 'http://openweathermap.org/img/w/' + props.icon + '.png'
 
   let forecast = (
     <div>
       <table>
+        <tbody>
         <tr>
           <th>
             City
@@ -20,6 +22,9 @@ const Weather = (props) =>{
           </th>
           <th>
             Description
+          </th>
+          <th>
+          
           </th>
         </tr>
         <tr>
@@ -38,7 +43,11 @@ const Weather = (props) =>{
           <td>
             {props.description}
           </td>
+          <td>
+           <img src={iconLink} alt="" />
+          </td>
         </tr>
+        </tbody>
       </table>
     </div>
   );
