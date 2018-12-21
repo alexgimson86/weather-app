@@ -12,9 +12,9 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      city:'Moscow',
-      country:'Russia',
-      temperature: '',//response.main.temp,
+      city:null,
+      country:null,
+      temperature: null,//response.main.temp,
       humidity: null,//response.main.humidity,
       error:null,
       description: null,//response.weather[0].description,
