@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 const Form = (props) =>{
     return(
         <form onSubmit={props.loadWeather}>
-        city:
-            <input type="text" name="city"/>
-        country:
-            <input type="text" name="country"/>
-            <button>Get Weather</button>
+            <div className="form-group">
+                city:
+                    <input type="text" className="form-control" name="city"/>
+                country:
+                    <input type="text" className="form-control" name="country"/>
+                    <button type="submit" className="btn btn-primary">Get Weather</button>
+            </div>
         </form>
         );
     }

@@ -43,8 +43,10 @@ class App extends Component {
   render() {
     return (
       <div>
+        <div className="container-fluid">
         <Titles/>
         <Form loadWeather={this.getWeather}/>
+        </div>
         <div className="container">
           <Weather city={this.state.city} 
                   country={this.state.country}
