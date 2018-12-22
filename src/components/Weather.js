@@ -2,32 +2,42 @@ import React from 'react';
 const Weather = (props) =>{
 
   const iconLink = 'http://openweathermap.org/img/w/' + props.icon + '.png'
-
-  let forecast = (
+  const date = new Date();
+  let day = date.getDay();
+  let dayRay = ["Monday", "Tuesday","Wednesday","Thursday", "Friday", "Saturday" , "Sunday"]
+  
+  let forecastFirst = (
     <div>
-      <table>
-        <tbody>
+      <table className="table">
+        <thead className="thead-light">
         <tr>
-          <th>
+          <th scope="col">
+            Day
+          </th>
+          <th scope="col">
             City
           </th>
-          <th>
+          <th scope="col">
             Country
           </th>
-          <th>
+          <th scope="col">
             Temp
           </th>
-          <th>
+          <th scope="col">
             Humidity
           </th>
-          <th>
+          <th scope="col">
             Description
           </th>
-          <th>
-          
+          <th scope="col">
           </th>
         </tr>
+          </thead>
+        <tbody>
         <tr>
+          <th scope="row">
+            {dayRay[day -1]}
+          </th>
           <td>
             {props.city}
           </td>
@@ -53,7 +63,7 @@ const Weather = (props) =>{
   );
   return (
     <div>
-      {forecast}
+      {forecastFirst}
     </div>
   )
 }

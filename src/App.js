@@ -42,17 +42,18 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <Titles />
+      <div>
+        <Titles/>
         <Form loadWeather={this.getWeather}/>
-        <Weather city={this.state.city} 
-                 country={this.state.country}
-                 temperature={this.state.temperature}
-                 humidity={this.state.humidity}
-                 description={this.state.description} 
-                 icon={this.state.icon}
-                 />
-
+        <div className="container">
+          <Weather city={this.state.city} 
+                  country={this.state.country}
+                  temperature={this.state.temperature}
+                  humidity={this.state.humidity}
+                  description={this.state.description} 
+                  icon={this.state.icon}
+                  />
+       </div>
       </div>
     );
   }
